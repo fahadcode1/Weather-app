@@ -1,0 +1,277 @@
+/* -------------------------------------------------
+   BASE STYLES
+------------------------------------------------- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+}
+
+.box-father {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* -------------------------------------------------
+   MAIN CONTAINER
+------------------------------------------------- */
+.main-container {
+  max-width: 1300px;
+  display: flex;
+  margin: 0 auto;
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/147/871/818/digital-digital-art-artwork-illustration-drawing-hd-wallpaper-preview.jpg');
+  background-size: cover;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  gap: 0px;
+}
+
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+  margin-left: 5px;
+  color: aliceblue;
+}
+
+h3 {
+  padding: 0px;
+  font-family: 'Parfait', sans-serif;
+  font-size: 30px;
+  margin: 5px;
+  margin-left: 10px;
+  margin-top: 25px;
+}
+
+.main-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 10px;
+  flex-direction: row;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+#search {
+  width: 600px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 0 25px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+  outline: none;
+}
+
+#search::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#search:focus {
+  border: 2px solid rgba(102, 126, 234, 0.8);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: 0.3s ease;
+}
+
+
+.card {
+  width: 320px;
+  padding: 5px;
+  border-radius: 18px;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin: 15px auto;
+  text-align: center;
+  animation: floatUp 0.8s ease;
+}
+
+.card:hover,
+.cardTomorrow:hover,
+.cardYesterday:hover {
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.35);
+  transform: translateY(-3px);
+  transition: 0.3s ease;
+}
+
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+.cityDisplay {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.tempDisplay {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #fefefe;
+}
+
+.humidityDisplay {
+  font-size: 1.1rem;
+  color: #e9e9e9;
+}
+
+.conditionsDisplay {
+  font-size: 1.8rem;
+  color: #e9e9e9;
+}
+
+.errorDisplay {
+  margin-top: 12px;
+  color: #ff7b7b;
+  font-size: 0.9rem;
+  display: none;
+}
+
+
+@media (max-width: 1024px) {
+  #search {
+    width: 450px;
+    height: 45px;
+    font-size: 15px;
+  }
+
+  button {
+    padding: 12px 20px;
+  }
+
+  .main-area {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .card {
+    width: 300px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .head h3 {
+    font-size: 26px;
+  }
+
+  #search {
+    width: 350px;
+    height: 45px;
+  }
+
+  button {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  .box-father {
+    flex-direction: column;
+  }
+
+  .card
+ {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .head {
+    justify-content: center;
+  }
+
+  h3 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  #search {
+    width: 260px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .cityDisplay {
+    font-size: 1.6rem;
+  }
+
+  .tempDisplay {
+    font-size: 2.6rem;
+  }
+
+  .conditionsDisplay {
+    font-size: 1.4rem;
+  }
+}
+
+
+.emojiDisplay {
+    font-size: 3rem;               
+    margin-top: 10px;              
+    margin-bottom: 10px;
+    text-align: center;            
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    cursor: default;              
+}
+
+
+.emojiDisplay:hover {
+    transform: scale(1.2);          
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+.displayError {
+    color: rgb(224, 224, 224);
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+}
